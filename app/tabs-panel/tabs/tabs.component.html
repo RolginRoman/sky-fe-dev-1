@@ -1,0 +1,14 @@
+<ng-container *ngIf="currentTabs$ | async as tabs">
+    <div class="tabs__titles">
+        <div class="tabs__title" [class.tabs__title--active]="i === activeTabIndex" *ngFor="let tab of tabs; let i = index"
+            (click)="activateTab(i)">
+            <ng-container *ngTemplateOutlet="tab.title"></ng-container>
+        </div>
+    </div>
+
+    <ng-container *ngFor="let tab of tabs; let i = index">
+        <ng-container *ngIf="i === activeTabIndex">
+            <ng-container *ngTemplateOutlet="tab.content"></ng-container>
+        </ng-container>
+    </ng-container>
+</ng-container>

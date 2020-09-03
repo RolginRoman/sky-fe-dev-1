@@ -1,1 +1,7 @@
-<span>A</span>
+<ng-template #title>
+    <ng-content select="tab-title"></ng-content>
+</ng-template>
+
+<ng-template #content>
+    <ng-content select="tab-content"></ng-content>
+</ng-template>
