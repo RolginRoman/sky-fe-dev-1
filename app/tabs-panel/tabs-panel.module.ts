@@ -13,4 +13,4 @@ import { TabsComponent } from "./tabs/tabs.component";
   ],
   exports: [TabsComponent, TabComponent, TabTitleComponent, TabContentComponent]
 })
-export class TabPanelModule {}
+export class TabsPanelModule {}

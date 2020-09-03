@@ -5,10 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { TestComponent } from './test.component';
-import { TabPanelModule } from './tab-panel/tab-panel.module';
+import { TabsPanelModule } from './tabs-panel/tabs-panel.module';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, TabPanelModule ],
+  imports:      [ BrowserModule, FormsModule, TabsPanelModule ],
   declarations: [ AppComponent, HelloComponent, TestComponent ],
   bootstrap:    [ AppComponent ],
 })
