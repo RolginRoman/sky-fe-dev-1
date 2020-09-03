@@ -23,11 +23,17 @@ export class TabsComponent implements AfterContentInit {
 
   public activateTab(index: number): void {
     this.activeTabIndex = index;
+    this.selectTab();
+  }
+
+  private selectTab(): void {
+    this.tabs.forEach((tab, index) => tab.selected = index === this.activeTabIndex);;
   }
 
   private syncActiveIndex(tabs: unknown[]): void {
     if (this.activeTabIndex === tabs.length) {
       this.activeTabIndex = 0;
     }
+    this.selectTab();
   }
 }

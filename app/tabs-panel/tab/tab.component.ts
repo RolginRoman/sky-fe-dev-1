@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, TemplateRef, ViewChild } from "@angular/core";
+import { ChangeDetectionStrategy, Component, TemplateRef, ViewChild, Input, ContentChild, ChangeDetectorRef } from "@angular/core";
 import { TabContentComponent } from "./tab-content/tab-content.component";
 import { TabTitleComponent } from "./tab-title/tab-title.component";
 
@@ -14,4 +14,12 @@ export class TabComponent {
 
   @ViewChild('content', { read: TemplateRef, static: true })
   public content: TemplateRef<TabContentComponent>;
+
+  @ContentChild(TabContentComponent, { static: true })
+  private contentInstance: TabContentComponent;
+
+  @Input()
+  public set selected(value: boolean) {
+    this.contentInstance.selected = value;
+  }
 }
