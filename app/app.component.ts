@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  public tabs = [ 1, 2 ];
+  public tabs = [ 1, 2, 3, 4 ];
 
   public dec() {
     this.tabs = this.tabs.slice(0, -1);

@@ -1,11 +1,15 @@
-import { ChangeDetectionStrategy, Component, TemplateRef, ViewChild, Input, ContentChild, ChangeDetectorRef } from "@angular/core";
+import { ChangeDetectionStrategy, Component, Input, TemplateRef, ViewChild } from "@angular/core";
 import { TabContentComponent } from "./tab-content/tab-content.component";
 import { TabTitleComponent } from "./tab-title/tab-title.component";
+import { TabViewService } from "./tab-view.service";
 
 @Component({
   selector: 'tab',
   templateUrl: 'tab.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [
+    TabViewService,
+  ]
 })
 export class TabComponent {
 
@@ -15,11 +19,14 @@ export class TabComponent {
   @ViewChild('content', { read: TemplateRef, static: true })
   public content: TemplateRef<TabContentComponent>;
 
-  @ContentChild(TabContentComponent, { static: true })
-  private contentInstance: TabContentComponent;
+  constructor(private tabViewService: TabViewService) {}
 
   @Input()
   public set selected(value: boolean) {
-    this.contentInstance.selected = value;
+    if (value) {
+      this.tabViewService.activate();
+    } else {
+      this.tabViewService.deactivate();
+    }
   }
 }

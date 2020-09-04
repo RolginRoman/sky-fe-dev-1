@@ -8,16 +8,6 @@
 <br>
 
 <tabs>
-  <tab>
-    <tab-title>
-      Tab <b>0</b> title Eager
-    </tab-title>
-    <tab-content>
-      Tab <b>0</b> content Eager
-      <test [tab]="0"></test>
-    </tab-content>
-  </tab>
-
   <tab *ngFor="let tab of tabs">
     <tab-title>
       Tab <b>{{ tab }}</b> title

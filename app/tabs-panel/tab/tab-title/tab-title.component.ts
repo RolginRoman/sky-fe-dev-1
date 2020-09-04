@@ -5,8 +5,5 @@ import { Component, ChangeDetectionStrategy, HostBinding, OnInit } from "@angula
   template: `<ng-content></ng-content>`,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TabTitleComponent implements OnInit {
-  @HostBinding('class.tabs-title')
-  ngOnInit() {
-  }
+export class TabTitleComponent {
 }
