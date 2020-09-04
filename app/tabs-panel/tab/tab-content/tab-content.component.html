@@ -1,0 +1,6 @@
+<ng-container *ngIf="tabViewService.isActivated$ | async">
+	<ng-container *ngTemplateOutlet="contentTemplate ? contentTemplate : defaultContentTemplate"></ng-container>
+</ng-container>
+<ng-template #defaultContentTemplate>
+	<ng-content></ng-content>
+</ng-template>

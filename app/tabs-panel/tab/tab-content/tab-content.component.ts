@@ -4,12 +4,7 @@ import { TabContentLazyDirective } from "./tab-content-lazy.directive";
 
 @Component({
   selector: 'tab-content',
-  template: `
-  <ng-container *ngIf="tabViewService.isActivated$ | async">
-    <ng-container *ngTemplateOutlet="contentTemplate ? contentTemplate : defaultContentTemplate"></ng-container>
-  </ng-container>
-  <ng-template #defaultContentTemplate><ng-content></ng-content></ng-template>
-  `,
+  templateUrl: 'tab-content.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TabContentComponent {
